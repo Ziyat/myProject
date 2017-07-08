@@ -1,0 +1,163 @@
+body{
+  /*background: url(../img/main_bg.jpg);
+  background-position: center;
+  background-size: cover;*/
+  background-color: #f6f6f6;
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/MaterialIcons-Regular.eot?ca23b8cd0b80e5cb06f6c740ccad4d1d);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../fonts/MaterialIcons-Regular.woff2?570eb83859dc23dd0eec423a49e147fe) format("woff2"), url(../fonts/MaterialIcons-Regular.woff?012cf6a10129e2275d79d6adac7f3b02) format("woff"), url(../fonts/MaterialIcons-Regular.ttf?a37b0c01c0baf1888ca812cc0508f6e2) format("truetype");
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga';
+}
+
+.header {
+  margin-top: 0;
+  padding-top: 15px;
+  padding-bottom: 0;
+  background: url(../img/HeaderBg2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header-logo img {
+  width: 160px;
+}
+
+.card-content .divider {
+  margin: 5px 0;
+}
+
+blockquote {
+  border-left: 5px solid #0d47a1;
+}
+
+a {
+  color: #0d47a1;
+}
+
+.dropdown-content li > a,
+.dropdown-content li > span {
+  color: #0d47a1;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:after {
+  background-color: #0d47a1;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:before,
+[type="radio"].with-gap:checked + label:after {
+  border: 2px solid #0d47a1;
+}
+
+
+.card.horizontal .card-image{
+  min-width: 20%;
+}
+
+.card-content p img{
+  width: 100%;
+}
+
+.badge_nav{
+  padding: 5px;
+    background: #022966;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.pagination li.active{
+  background-color: #0d47a1;
+}
+
+.card .card-image .card-title{
+  padding: 0 22px;
+}
+
+.card .card-action{
+  padding: 10px 24px;
+}
+.card .card-content > p{
+  margin-top: 5px;
+  padding-top: 5px; 
+  border-top: 1px solid rgba(160,160,160,0.2);
+}
+#zagolovok,#flag
+{
+  display: none;
+}
+
+@media print{
+    *,
+  *:before,
+  *:after,
+  *:first-letter,
+  p:first-line,
+  div:first-line,
+  blockquote:first-line,
+  li:first-line {
+      background: transparent !important;
+      color: #000 !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+  }
+    nav, .collection, .btn, footer, title {
+      display: none;
+    }
+    a[href]:after {
+      content: " (" attr(href) ")";
+  }
+    a[href^="http"]:not([href*="mywebsite.com"]):after {
+      content: " (" attr(href) ")";
+  }
+    * { -webkit-print-color-adjust: exact; }
+    #zagolovok{
+      display: block;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #dddddd;
+      margin-bottom: 15px;
+    }
+    #flag{
+      display: block;
+      text-align: center;
+    }
+    #flag img{
+      width: 300px;
+    }
+
+  }
+.card.horizontal .card-image img{
+  width: 100%;
+  max-width: none;
+}
+}
+
