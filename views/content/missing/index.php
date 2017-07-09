@@ -1,8 +1,9 @@
-<?php $titlePage = 'Без вести пропавшие'; include ROOT . '/views/content/layout/header.php'; ?>
+<?php $titlePage = MISSING; include ROOT . '/views/content/layout/header.php'; ?>
 <div class="container">
   <div class="row">
    <div class="col s12 m8 l8">
       <div class="row">
+      <h5 class="center-align"><?php echo MISSING; ?></h5>
          <?php if (is_array($missing)): ?>
             <div class="row">
               <div class="col s12">

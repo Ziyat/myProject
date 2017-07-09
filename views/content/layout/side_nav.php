@@ -25,6 +25,12 @@
 <br>
 <div class="card">
   <div class="card-image">
+    <a href="/<?php echo $lang; ?>/alimony"><img src="/template/content/img/bg4.jpg"></a>
+    <span class="card-title"><a href="/<?php echo $lang; ?>/alimony" class="white-text"><?php echo ALIMONY; ?></a></span>
+  </div>
+</div>
+<div class="card">
+  <div class="card-image">
     <a href="/<?php echo $lang; ?>/people"><img src="/template/content/img/bg.jpg"></a>
     <span class="card-title"><a href="/<?php echo $lang; ?>/people" class="white-text"><?php echo PEOPLE_ARE_WANTED; ?></a></span>
   </div>

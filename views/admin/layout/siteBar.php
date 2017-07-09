@@ -15,5 +15,6 @@
   <a href="/<?php echo $lang; ?>/admin/prevention" class="collection-item">День профилактики</a>
   <a href="/<?php echo $lang; ?>/admin/missing" class="collection-item"><?php echo MISSING; ?></a>
   <a href="/<?php echo $lang; ?>/admin/people" class="collection-item"><?php echo PEOPLE_ARE_WANTED; ?></a>
+  <a href="/<?php echo $lang; ?>/admin/alimony" class="collection-item"><?php echo ALIMONY; ?></a>
   <a href="/<?php echo $lang; ?>/admin/comments" class="collection-item"><?php echo COMMENTS; ?></a>
 </div>

@@ -196,7 +196,68 @@ $('#people-input').keyup(function(){
 		peoplePerebor();
 	}
 });
-  
+function alimonyPerebor(val){
+	if(undefined === val)
+	{
+		$('#result_search_alimony').attr('style','display: none');
+	}else
+	{
+		val = (val.toUpperCase());
+		$.ajax({
+				  url: "/alimony/search/result/"+ val,
+				}).done(function(data) {
+				  try{
+					  dataAjax = JSON.parse(data);
+					}
+					catch(e) {
+						dataAjax = '';
+					}
+
+					$('#result_search_alimony').attr('style','display: ""');
+					$('#img_search_alimony').attr('src', dataAjax.img);
+					$('#fio_search_alimony').text(dataAjax.name);
+					$('#birthday_search_alimony').text(dataAjax.birth_day);
+					if($('#descRU_search_alimony')){
+						$('#descUZ_search_alimony').text(dataAjax.descUZ);
+					}else
+					{
+						$('#descRU_search_alimony').text(dataAjax.descRU);
+					}
+				})
+	}
+	
+}
+$('#alimony-input').keyup(function(){
+	var $me = $(this);
+	var thisVal = $(this).val();
+	if(thisVal.length >= 2)
+	{
+		thisVal = (thisVal.toUpperCase());
+		
+		$.ajax({
+			  url: "/alimony/search/"+ thisVal,
+			}).done(function(data) {
+			  try{
+				  dataAjax = JSON.parse(data);
+				}
+				catch(e) {
+					dataAjax = '';
+				}
+			})
+
+		$me.autocomplete({
+			data: dataAjax,
+			limit: 20, 
+			onAutocomplete: function(val) {
+				alimonyPerebor(val);
+			},
+			minLength: 5,
+		});
+
+	} else if(thisVal.length === 0) {
+		peoplePerebor();
+	}
+});  
 	var body = $('html, body');
 
 	$('#scrollTop').click(function(){

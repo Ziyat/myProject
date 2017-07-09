@@ -31,6 +31,12 @@ $patterntextCyr = '([а-яА-Яa-zA-Z0-9%]+)';
 		$patternLang.'/admin/appeals/view/'.$patternId => 'adminAppeal/view/$2',
 		$patternLang.'/admin/appeals' => 'adminAppeal/index',
 
+		// Алиментщики
+		$patternLang.'/admin/alimony/create' => 'adminAlimony/create',
+		$patternLang.'/admin/alimony/delete/'.$patternId => 'adminAlimony/delete/$2',
+		$patternLang.'/admin/alimony/update/'.$patternId => 'adminAlimony/update/$2',
+		$patternLang.'/admin/alimony/page-'.$patternId => 'adminAlimony/index/$2',
+		$patternLang.'/admin/alimony' => 'adminAlimony/index',
 
 		// без вести пропавшие
 		$patternLang.'/admin/missing/create' => 'adminMissing/create',
@@ -75,6 +81,13 @@ $patterntextCyr = '([а-яА-Яa-zA-Z0-9%]+)';
 		$patternLang.'/cabinet/edit' => 'cabinet/edit',
 		$patternLang.'/cabinet' => 'cabinet/index',
 
+
+		// Алиментщики
+		'alimony/search/result/'.$patterntextCyr => 'alimony/ajaxSearchAlimonyResult/$1',
+		'alimony/search/'.$patterntextCyr => 'alimony/ajaxSearchAlimony/$1',
+		$patternLang.'/alimony/'.$patternId => 'alimony/view/$2',
+		$patternLang.'/alimony/page-'.$patternId => 'alimony/index/$2',
+		$patternLang.'/alimony' => 'alimony/index',
 
 		// Без вести пропавшие
 		'missing/search/result/'.$patterntextCyr => 'missing/ajaxSearchMissingResult/$1',
