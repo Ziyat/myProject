@@ -17,4 +17,5 @@
   <a href="/<?php echo $lang; ?>/admin/people" class="collection-item"><?php echo PEOPLE_ARE_WANTED; ?></a>
   <a href="/<?php echo $lang; ?>/admin/alimony" class="collection-item"><?php echo ALIMONY; ?></a>
   <a href="/<?php echo $lang; ?>/admin/comments" class="collection-item"><?php echo COMMENTS; ?></a>
+  <a href="/<?php echo $lang; ?>/admin/fraud" class="collection-item"><?php echo FRAUD; ?></a>
 </div>

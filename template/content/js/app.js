@@ -217,11 +217,11 @@ function alimonyPerebor(val){
 					$('#img_search_alimony').attr('src', dataAjax.img);
 					$('#fio_search_alimony').text(dataAjax.name);
 					$('#birthday_search_alimony').text(dataAjax.birth_day);
-					if($('#descRU_search_alimony')){
-						$('#descUZ_search_alimony').text(dataAjax.descUZ);
-					}else
+					if($('#descRU_search_alimony').length){
+						$('#descRU_search_alimony').html('<h4>'+dataAjax.name+'</h4><p>'+dataAjax.descRU+'</p>');
+					}else if($('#descUZ_search_alimony').length)
 					{
-						$('#descRU_search_alimony').text(dataAjax.descRU);
+						$('#descUZ_search_alimony').html('<h4>'+dataAjax.name+'</h4><p>'+dataAjax.descUZ+'</p>');
 					}
 				})
 	}
@@ -255,9 +255,73 @@ $('#alimony-input').keyup(function(){
 		});
 
 	} else if(thisVal.length === 0) {
-		peoplePerebor();
+		alimonyPerebor();
 	}
-});  
+});
+
+function fraudPerebor(val){
+	if(undefined === val)
+	{
+		$('#result_search_fraud').attr('style','display: none');
+	}else
+	{
+		val = (val.toUpperCase());
+		$.ajax({
+				  url: "/fraud/search/result/"+ val,
+				}).done(function(data) {
+				  try{
+					  dataAjax = JSON.parse(data);
+					}
+					catch(e) {
+						dataAjax = '';
+					}
+
+					$('#result_search_fraud').attr('style','display: ""');
+					$('#img_search_fraud').attr('src', dataAjax.img);
+					$('#fio_search_fraud').text(dataAjax.name);
+					$('#birthday_search_fraud').text(dataAjax.birth_day);
+					if($('#descRU_search_fraud').length){
+						$('#descRU_search_fraud').html('<h4>'+dataAjax.name+'</h4><p>'+dataAjax.descRU+'</p>');
+					}else if($('#descUZ_search_fraud').length)
+					{
+						$('#descUZ_search_fraud').html('<h4>'+dataAjax.name+'</h4><p>'+dataAjax.descUZ+'</p>');
+					}
+				})
+	}
+	
+}
+$('#fraud-input').keyup(function(){
+	var $me = $(this);
+	var thisVal = $(this).val();
+	if(thisVal.length >= 2)
+	{
+		thisVal = (thisVal.toUpperCase());
+		
+		$.ajax({
+			  url: "/fraud/search/"+ thisVal,
+			}).done(function(data) {
+			  try{
+				  dataAjax = JSON.parse(data);
+				}
+				catch(e) {
+					dataAjax = '';
+				}
+			})
+
+		$me.autocomplete({
+			data: dataAjax,
+			limit: 20, 
+			onAutocomplete: function(val) {
+				fraudPerebor(val);
+			},
+			minLength: 5,
+		});
+
+	} else if(thisVal.length === 0) {
+		fraudPerebor();
+	}
+}); 
+
 	var body = $('html, body');
 
 	$('#scrollTop').click(function(){

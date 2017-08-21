@@ -31,6 +31,13 @@ $patterntextCyr = '([а-яА-Яa-zA-Z0-9%]+)';
 		$patternLang.'/admin/appeals/view/'.$patternId => 'adminAppeal/view/$2',
 		$patternLang.'/admin/appeals' => 'adminAppeal/index',
 
+		// Мошенничество
+		$patternLang.'/admin/fraud/create' => 'adminFraud/create',
+		$patternLang.'/admin/fraud/delete/'.$patternId => 'adminFraud/delete/$2',
+		$patternLang.'/admin/fraud/update/'.$patternId => 'adminFraud/update/$2',
+		$patternLang.'/admin/fraud/page-'.$patternId => 'adminFraud/index/$2',
+		$patternLang.'/admin/fraud' => 'adminFraud/index',
+
 		// Алиментщики
 		$patternLang.'/admin/alimony/create' => 'adminAlimony/create',
 		$patternLang.'/admin/alimony/delete/'.$patternId => 'adminAlimony/delete/$2',
@@ -81,6 +88,12 @@ $patterntextCyr = '([а-яА-Яa-zA-Z0-9%]+)';
 		$patternLang.'/cabinet/edit' => 'cabinet/edit',
 		$patternLang.'/cabinet' => 'cabinet/index',
 
+		// Мошенничество
+		'fraud/search/result/'.$patterntextCyr => 'fraud/ajaxSearchFraudResult/$1',
+		'fraud/search/'.$patterntextCyr => 'fraud/ajaxSearchFraud/$1',
+		$patternLang.'/fraud/'.$patternId => 'fraud/view/$2',
+		$patternLang.'/fraud/page-'.$patternId => 'fraud/index/$2',
+		$patternLang.'/fraud' => 'fraud/index',
 
 		// Алиментщики
 		'alimony/search/result/'.$patterntextCyr => 'alimony/ajaxSearchAlimonyResult/$1',
